@@ -38,23 +38,21 @@
     lightNode.light.type = SCNLightTypeOmni;
     // place the camera, 10 units back from the center of the scene.
     lightNode.position = SCNVector3Make(0, 0, 10);
-    [scene.rootNode addChildNode:lightNode];
+    //[scene.rootNode addChildNode:lightNode];
     
     // create and add an ambient light to the scene
     SCNNode *ambientLightNode = [SCNNode node];
     ambientLightNode.light = [SCNLight light];
     ambientLightNode.light.type = SCNLightTypeAmbient;
     ambientLightNode.light.color = [UIColor whiteColor];
-    [scene.rootNode addChildNode:ambientLightNode];
+    //[scene.rootNode addChildNode:ambientLightNode];
     
     MYBox *box = [MYBox node];
     [scene.rootNode addChildNode:box];
     box.transform = SCNMatrix4MakeRotation(M_PI_2/2, 1, 1, 0);
     
     SCNAction *action = [SCNAction rotateByX:1.0 y:1.0 z:0.0 duration:1.0];
-    
     [box runAction:[SCNAction repeatActionForever:action]];
-    
     
     // configure the view
     self.sceneView.backgroundColor = [UIColor blackColor];
@@ -63,7 +61,6 @@
     
     // allows the user to manipulate the camera
     self.sceneView.allowsCameraControl = YES;
-
 }
 
 
